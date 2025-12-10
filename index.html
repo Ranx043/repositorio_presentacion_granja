@@ -703,6 +703,54 @@
             background: linear-gradient(135deg, #f3e5f5 0%, white 100%);
         }
 
+        .lechones-block {
+            border-left-color: #795548;
+            background: linear-gradient(135deg, #efebe9 0%, white 100%);
+        }
+
+        .lechones-problems {
+            display: grid;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .lechon-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+        }
+
+        .lechon-item.problem {
+            background: rgba(244, 67, 54, 0.1);
+        }
+
+        .lechon-item.solution {
+            background: rgba(76, 175, 80, 0.1);
+        }
+
+        .lechon-item .icon {
+            font-size: 1.2rem;
+        }
+
+        .lechon-item .phase {
+            font-weight: 700;
+            color: #2e7d32;
+            min-width: 70px;
+        }
+
+        .lechones-solution {
+            background: #e8f5e9;
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+        }
+
+        .lechones-solution h4 {
+            margin: 0 0 0.75rem 0;
+            color: #2e7d32;
+        }
+
         .improvements-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -2406,10 +2454,52 @@
                     </div>
                 </div>
 
+                <!-- LECHONES EXTERNOS -->
+                <div class="evolution-block lechones-block">
+                    <div class="evolution-icon">🐷</div>
+                    <div class="evolution-content">
+                        <h3>Lechones Externos: El Costo Oculto de Comprar</h3>
+                        <p>Actualmente compramos lechones de <strong>La Vega</strong> - viaje largo que genera estrés y requiere período de adaptación.</p>
+                        <div class="lechones-problems">
+                            <div class="lechon-item problem">
+                                <span class="icon">🚗</span>
+                                <span>Transporte largo = estrés inicial</span>
+                            </div>
+                            <div class="lechon-item problem">
+                                <span class="icon">💊</span>
+                                <span>Medicación obligatoria al llegar (desparasitación, vitaminas)</span>
+                            </div>
+                            <div class="lechon-item problem">
+                                <span class="icon">🌡️</span>
+                                <span>Período de aclimatación: 7-14 días sin crecimiento real</span>
+                            </div>
+                            <div class="lechon-item problem">
+                                <span class="icon">❓</span>
+                                <span>Historial desconocido (enfermedades previas, genética)</span>
+                            </div>
+                        </div>
+                        <div class="lechones-solution">
+                            <h4>Plan de Mejora (3 fases):</h4>
+                            <div class="lechon-item solution">
+                                <span class="phase">FASE 1:</span>
+                                <span>Proveedores más cercanos (menos estrés de transporte)</span>
+                            </div>
+                            <div class="lechon-item solution">
+                                <span class="phase">FASE 2:</span>
+                                <span>Activar programa reproductivo (10 madres disponibles)</span>
+                            </div>
+                            <div class="lechon-item solution">
+                                <span class="phase">FASE 3:</span>
+                                <span>100% lechones propios = cero adaptación + ROI 115%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- MENSAJE FINAL -->
                 <div class="evolution-conclusion">
                     <p><strong>No pedimos dinero para arreglar errores.</strong></p>
-                    <p>Pedimos dinero para <strong>ESCALAR</strong> lo que ya funciona y eliminar el único cuello de botella que queda.</p>
+                    <p>Pedimos dinero para <strong>ESCALAR</strong> lo que ya funciona y eliminar los cuellos de botella que quedan.</p>
                 </div>
 
             </div>
