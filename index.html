@@ -1230,34 +1230,134 @@
                     <p style="margin-top: 10px; font-style: italic;">"Como una fábrica con 4 líneas de producción desfasadas 1 mes entre sí."</p>
                 </div>
 
-                <h3 style="margin-bottom: 20px;">Estructura de los 4 Módulos</h3>
-                <div class="flow-diagram" style="margin-bottom: 30px;">
-                    <div class="flow-step">
-                        <strong>MÓDULO A</strong><br>
-                        10-15 cerdos<br>
-                        <small>Mes 1 → Mes 5</small>
+                <h3 style="margin-bottom: 20px;">Estructura de los 4 Módulos (40 cerdos cada uno)</h3>
+
+                <!-- DIAGRAMA SVG: 4 MÓDULOS EN PARALELO -->
+                <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 16px; padding: 30px; margin-bottom: 30px; overflow-x: auto;">
+                    <svg viewBox="0 0 900 320" style="width: 100%; max-width: 900px; margin: 0 auto; display: block;">
+                        <!-- Título -->
+                        <text x="450" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1d3557">FLUJO MENSUAL: 4 LÍNEAS DE PRODUCCIÓN EN PARALELO</text>
+
+                        <!-- Leyenda de meses -->
+                        <text x="120" y="55" text-anchor="middle" font-size="11" fill="#666">MES 1</text>
+                        <text x="230" y="55" text-anchor="middle" font-size="11" fill="#666">MES 2</text>
+                        <text x="340" y="55" text-anchor="middle" font-size="11" fill="#666">MES 3</text>
+                        <text x="450" y="55" text-anchor="middle" font-size="11" fill="#666">MES 4</text>
+                        <text x="560" y="55" text-anchor="middle" font-size="11" fill="#666">MES 5</text>
+                        <text x="670" y="55" text-anchor="middle" font-size="11" fill="#666">MES 6</text>
+                        <text x="780" y="55" text-anchor="middle" font-size="11" fill="#666">MES 7+</text>
+
+                        <!-- Líneas verticales de meses -->
+                        <line x1="120" y1="60" x2="120" y2="280" stroke="#ddd" stroke-width="1" stroke-dasharray="5,5"/>
+                        <line x1="230" y1="60" x2="230" y2="280" stroke="#ddd" stroke-width="1" stroke-dasharray="5,5"/>
+                        <line x1="340" y1="60" x2="340" y2="280" stroke="#ddd" stroke-width="1" stroke-dasharray="5,5"/>
+                        <line x1="450" y1="60" x2="450" y2="280" stroke="#ddd" stroke-width="1" stroke-dasharray="5,5"/>
+                        <line x1="560" y1="60" x2="560" y2="280" stroke="#4caf50" stroke-width="2" stroke-dasharray="5,5"/>
+                        <line x1="670" y1="60" x2="670" y2="280" stroke="#4caf50" stroke-width="1" stroke-dasharray="5,5"/>
+                        <line x1="780" y1="60" x2="780" y2="280" stroke="#4caf50" stroke-width="1" stroke-dasharray="5,5"/>
+
+                        <!-- MÓDULO A -->
+                        <text x="30" y="95" font-size="12" font-weight="bold" fill="#1d3557">MÓDULO A</text>
+                        <text x="30" y="110" font-size="10" fill="#666">40 cerdos</text>
+                        <rect x="70" y="75" width="440" height="40" rx="8" fill="#ff9800" opacity="0.3"/>
+                        <rect x="70" y="75" width="440" height="40" rx="8" fill="none" stroke="#ff9800" stroke-width="2"/>
+                        <text x="290" y="100" text-anchor="middle" font-size="11" fill="#e65100">🐷 ENGORDE (4 meses)</text>
+                        <circle cx="560" cy="95" r="18" fill="#4caf50"/>
+                        <text x="560" y="100" text-anchor="middle" font-size="14" fill="white">💰</text>
+                        <text x="600" y="100" font-size="10" fill="#2e7d32" font-weight="bold">VENTA 1</text>
+
+                        <!-- MÓDULO B -->
+                        <text x="30" y="155" font-size="12" font-weight="bold" fill="#1d3557">MÓDULO B</text>
+                        <text x="30" y="170" font-size="10" fill="#666">40 cerdos</text>
+                        <rect x="180" y="135" width="440" height="40" rx="8" fill="#2196f3" opacity="0.3"/>
+                        <rect x="180" y="135" width="440" height="40" rx="8" fill="none" stroke="#2196f3" stroke-width="2"/>
+                        <text x="400" y="160" text-anchor="middle" font-size="11" fill="#1565c0">🐷 ENGORDE (4 meses)</text>
+                        <circle cx="670" cy="155" r="18" fill="#4caf50"/>
+                        <text x="670" y="160" text-anchor="middle" font-size="14" fill="white">💰</text>
+                        <text x="710" y="160" font-size="10" fill="#2e7d32" font-weight="bold">VENTA 2</text>
+
+                        <!-- MÓDULO C -->
+                        <text x="30" y="215" font-size="12" font-weight="bold" fill="#1d3557">MÓDULO C</text>
+                        <text x="30" y="230" font-size="10" fill="#666">40 cerdos</text>
+                        <rect x="290" y="195" width="440" height="40" rx="8" fill="#9c27b0" opacity="0.3"/>
+                        <rect x="290" y="195" width="440" height="40" rx="8" fill="none" stroke="#9c27b0" stroke-width="2"/>
+                        <text x="510" y="220" text-anchor="middle" font-size="11" fill="#7b1fa2">🐷 ENGORDE (4 meses)</text>
+                        <circle cx="780" cy="215" r="18" fill="#4caf50"/>
+                        <text x="780" y="220" text-anchor="middle" font-size="14" fill="white">💰</text>
+                        <text x="820" y="220" font-size="10" fill="#2e7d32" font-weight="bold">VENTA 3</text>
+
+                        <!-- MÓDULO D -->
+                        <text x="30" y="275" font-size="12" font-weight="bold" fill="#1d3557">MÓDULO D</text>
+                        <text x="30" y="290" font-size="10" fill="#666">40 cerdos</text>
+                        <rect x="400" y="255" width="440" height="40" rx="8" fill="#00bcd4" opacity="0.3"/>
+                        <rect x="400" y="255" width="440" height="40" rx="8" fill="none" stroke="#00bcd4" stroke-width="2"/>
+                        <text x="620" y="280" text-anchor="middle" font-size="11" fill="#00838f">🐷 ENGORDE (4 meses)</text>
+                        <text x="870" y="280" font-size="10" fill="#2e7d32" font-weight="bold">→MES 8</text>
+
+                        <!-- Indicador de zona de inversión -->
+                        <rect x="65" y="65" width="390" height="240" fill="#ffebee" opacity="0.3" rx="8"/>
+                        <text x="260" y="315" text-anchor="middle" font-size="11" fill="#c62828" font-weight="bold">📍 FASE INVERSIÓN (solo gastos)</text>
+
+                        <!-- Indicador de zona de retorno -->
+                        <rect x="505" y="65" width="340" height="240" fill="#e8f5e9" opacity="0.4" rx="8"/>
+                        <text x="675" y="315" text-anchor="middle" font-size="11" fill="#2e7d32" font-weight="bold">💰 FASE RETORNO (ventas mensuales)</text>
+                    </svg>
+                </div>
+
+                <!-- Cards resumen del modelo -->
+                <div class="cards-grid" style="margin-bottom: 30px;">
+                    <div class="card">
+                        <div class="card-title">🐷 Por Módulo</div>
+                        <div class="card-value">40 cerdos</div>
+                        <div class="card-detail">44 comprados (10% mortalidad)</div>
                     </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">
-                        <strong>MÓDULO B</strong><br>
-                        10-15 cerdos<br>
-                        <small>Mes 2 → Mes 6</small>
+                    <div class="card highlight">
+                        <div class="card-title">🏭 Total Rotación</div>
+                        <div class="card-value">160 cerdos</div>
+                        <div class="card-detail">4 módulos × 40 cerdos</div>
                     </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">
-                        <strong>MÓDULO C</strong><br>
-                        10-15 cerdos<br>
-                        <small>Mes 3 → Mes 7</small>
+                    <div class="card success">
+                        <div class="card-title">📅 Venta Mensual</div>
+                        <div class="card-value">40 cerdos/mes</div>
+                        <div class="card-detail">Una vez establecido el flujo</div>
                     </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step success">
-                        <strong>MÓDULO D</strong><br>
-                        10-15 cerdos<br>
-                        <small>Mes 4 → Mes 8</small>
+                    <div class="card">
+                        <div class="card-title">⏱️ Ciclo Individual</div>
+                        <div class="card-value">4 meses</div>
+                        <div class="card-detail">Pero el flujo es MENSUAL</div>
                     </div>
                 </div>
 
-                <h3 style="margin: 30px 0 20px;">FASE 1: Llenado (Meses 1-4) - Solo Gastos</h3>
+                <h3 style="margin: 30px 0 20px;">FASE 1: Llenado (Meses 1-4) - Inversión Pura</h3>
+
+                <!-- Diagrama SVG de fase de inversión -->
+                <div style="background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); border-radius: 16px; padding: 20px; margin-bottom: 20px;">
+                    <svg viewBox="0 0 800 100" style="width: 100%; max-width: 800px; margin: 0 auto; display: block;">
+                        <!-- Barra de progreso de inversión -->
+                        <rect x="50" y="30" width="700" height="40" rx="20" fill="#e0e0e0"/>
+                        <rect x="50" y="30" width="175" height="40" rx="20" fill="#ff9800"/>
+                        <rect x="225" y="30" width="175" height="40" rx="0" fill="#ff7043"/>
+                        <rect x="400" y="30" width="175" height="40" rx="0" fill="#f44336"/>
+                        <rect x="575" y="30" width="175" height="40" rx="20" fill="#d32f2f"/>
+
+                        <!-- Textos -->
+                        <text x="137" y="55" text-anchor="middle" font-size="11" fill="white" font-weight="bold">MES 1</text>
+                        <text x="137" y="85" text-anchor="middle" font-size="10" fill="#e65100">RD$ 260K</text>
+                        <text x="312" y="55" text-anchor="middle" font-size="11" fill="white" font-weight="bold">MES 2</text>
+                        <text x="312" y="85" text-anchor="middle" font-size="10" fill="#e65100">RD$ 320K</text>
+                        <text x="487" y="55" text-anchor="middle" font-size="11" fill="white" font-weight="bold">MES 3</text>
+                        <text x="487" y="85" text-anchor="middle" font-size="10" fill="#e65100">RD$ 380K</text>
+                        <text x="662" y="55" text-anchor="middle" font-size="11" fill="white" font-weight="bold">MES 4</text>
+                        <text x="662" y="85" text-anchor="middle" font-size="10" fill="#c62828">RD$ 464K</text>
+
+                        <!-- Iconos -->
+                        <text x="137" y="20" text-anchor="middle" font-size="14">🐷</text>
+                        <text x="312" y="20" text-anchor="middle" font-size="14">🐷🐷</text>
+                        <text x="487" y="20" text-anchor="middle" font-size="14">🐷🐷🐷</text>
+                        <text x="662" y="20" text-anchor="middle" font-size="14">🐷🐷🐷🐷</text>
+                    </svg>
+                </div>
+
                 <div class="table-wrapper">
                     <table>
                         <thead>
@@ -1272,37 +1372,66 @@
                         <tbody>
                             <tr>
                                 <td><strong>1</strong></td>
-                                <td>Comprar Módulo A (10 lechones) + alimentar</td>
-                                <td class="text-right">RD$ 65,000</td>
-                                <td class="text-right">RD$ 65,000</td>
+                                <td>Comprar Módulo A (44 lechones) + alimentar</td>
+                                <td class="text-right">RD$ 260,000</td>
+                                <td class="text-right">RD$ 260,000</td>
                                 <td class="text-right negative">RD$ 0</td>
                             </tr>
                             <tr>
                                 <td><strong>2</strong></td>
-                                <td>Comprar Módulo B + alimentar A y B</td>
-                                <td class="text-right">RD$ 81,000</td>
-                                <td class="text-right">RD$ 146,000</td>
+                                <td>Comprar Módulo B (44) + alimentar A y B</td>
+                                <td class="text-right">RD$ 320,000</td>
+                                <td class="text-right">RD$ 580,000</td>
                                 <td class="text-right negative">RD$ 0</td>
                             </tr>
                             <tr>
                                 <td><strong>3</strong></td>
-                                <td>Comprar Módulo C + alimentar A, B, C</td>
-                                <td class="text-right">RD$ 97,000</td>
-                                <td class="text-right">RD$ 243,000</td>
+                                <td>Comprar Módulo C (44) + alimentar A, B, C</td>
+                                <td class="text-right">RD$ 380,000</td>
+                                <td class="text-right">RD$ 960,000</td>
                                 <td class="text-right negative">RD$ 0</td>
                             </tr>
                             <tr class="highlight-row">
                                 <td><strong>4</strong></td>
-                                <td>Comprar Módulo D + alimentar todos</td>
-                                <td class="text-right">RD$ 113,000</td>
-                                <td class="text-right"><strong>RD$ 356,000</strong></td>
+                                <td>Comprar Módulo D (44) + alimentar todos</td>
+                                <td class="text-right">RD$ 464,000</td>
+                                <td class="text-right"><strong>RD$ 1,424,000</strong></td>
                                 <td class="text-right negative">RD$ 0</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <h3 style="margin: 30px 0 20px;">FASE 2: Transición (Meses 5-8) - Empiezan Ventas</h3>
+                <h3 style="margin: 30px 0 20px;">FASE 2: Retorno (Meses 5-8) - Empiezan Ventas</h3>
+
+                <!-- Diagrama SVG de fase de retorno -->
+                <div style="background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 16px; padding: 20px; margin-bottom: 20px;">
+                    <svg viewBox="0 0 800 100" style="width: 100%; max-width: 800px; margin: 0 auto; display: block;">
+                        <!-- Barra de progreso de retorno -->
+                        <rect x="50" y="30" width="700" height="40" rx="20" fill="#e0e0e0"/>
+                        <rect x="50" y="30" width="175" height="40" rx="20" fill="#4caf50"/>
+                        <rect x="225" y="30" width="175" height="40" rx="0" fill="#66bb6a"/>
+                        <rect x="400" y="30" width="175" height="40" rx="0" fill="#81c784"/>
+                        <rect x="575" y="30" width="175" height="40" rx="20" fill="#a5d6a7"/>
+
+                        <!-- Textos -->
+                        <text x="137" y="55" text-anchor="middle" font-size="11" fill="white" font-weight="bold">MES 5</text>
+                        <text x="137" y="85" text-anchor="middle" font-size="10" fill="#2e7d32">+RD$ 190K</text>
+                        <text x="312" y="55" text-anchor="middle" font-size="11" fill="white" font-weight="bold">MES 6</text>
+                        <text x="312" y="85" text-anchor="middle" font-size="10" fill="#2e7d32">+RD$ 190K</text>
+                        <text x="487" y="55" text-anchor="middle" font-size="11" fill="white" font-weight="bold">MES 7</text>
+                        <text x="487" y="85" text-anchor="middle" font-size="10" fill="#2e7d32">+RD$ 190K</text>
+                        <text x="662" y="55" text-anchor="middle" font-size="11" fill="white" font-weight="bold">MES 8</text>
+                        <text x="662" y="85" text-anchor="middle" font-size="10" fill="#1b5e20">+RD$ 190K</text>
+
+                        <!-- Iconos -->
+                        <text x="137" y="20" text-anchor="middle" font-size="14">💰</text>
+                        <text x="312" y="20" text-anchor="middle" font-size="14">💰💰</text>
+                        <text x="487" y="20" text-anchor="middle" font-size="14">💰💰💰</text>
+                        <text x="662" y="20" text-anchor="middle" font-size="14">💰💰💰💰</text>
+                    </svg>
+                </div>
+
                 <div class="table-wrapper">
                     <table>
                         <thead>
@@ -1310,69 +1439,70 @@
                                 <th>Mes</th>
                                 <th>Venta</th>
                                 <th class="text-right">Ingreso</th>
-                                <th class="text-right">Costos</th>
-                                <th class="text-right">Neto Mes</th>
-                                <th class="text-right">Acumulado</th>
+                                <th class="text-right">Costos*</th>
+                                <th class="text-right">Utilidad Mes</th>
+                                <th class="text-right">Recuperado</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><strong>5</strong></td>
-                                <td>Módulo A (9 cerdos)</td>
-                                <td class="text-right positive">RD$ 126,000</td>
-                                <td class="text-right">RD$ 48,000</td>
-                                <td class="text-right positive">+RD$ 78,000</td>
-                                <td class="text-right negative">-RD$ 278,000</td>
+                                <td>Módulo A (40 cerdos)</td>
+                                <td class="text-right positive">RD$ 560,000</td>
+                                <td class="text-right">RD$ 370,000</td>
+                                <td class="text-right positive">+RD$ 190,000</td>
+                                <td class="text-right negative">-RD$ 1,234,000</td>
                             </tr>
                             <tr>
                                 <td><strong>6</strong></td>
-                                <td>Módulo B (9 cerdos)</td>
-                                <td class="text-right positive">RD$ 126,000</td>
-                                <td class="text-right">RD$ 48,000</td>
-                                <td class="text-right positive">+RD$ 78,000</td>
-                                <td class="text-right negative">-RD$ 200,000</td>
+                                <td>Módulo B (40 cerdos)</td>
+                                <td class="text-right positive">RD$ 560,000</td>
+                                <td class="text-right">RD$ 370,000</td>
+                                <td class="text-right positive">+RD$ 190,000</td>
+                                <td class="text-right negative">-RD$ 1,044,000</td>
                             </tr>
                             <tr>
                                 <td><strong>7</strong></td>
-                                <td>Módulo C (9 cerdos)</td>
-                                <td class="text-right positive">RD$ 126,000</td>
-                                <td class="text-right">RD$ 48,000</td>
-                                <td class="text-right positive">+RD$ 78,000</td>
-                                <td class="text-right negative">-RD$ 122,000</td>
+                                <td>Módulo C (40 cerdos)</td>
+                                <td class="text-right positive">RD$ 560,000</td>
+                                <td class="text-right">RD$ 370,000</td>
+                                <td class="text-right positive">+RD$ 190,000</td>
+                                <td class="text-right negative">-RD$ 854,000</td>
                             </tr>
                             <tr class="highlight-row">
                                 <td><strong>8</strong></td>
-                                <td>Módulo D (9 cerdos)</td>
-                                <td class="text-right positive">RD$ 126,000</td>
-                                <td class="text-right">RD$ 48,000</td>
-                                <td class="text-right positive">+RD$ 78,000</td>
-                                <td class="text-right negative"><strong>-RD$ 44,000</strong></td>
+                                <td>Módulo D (40 cerdos)</td>
+                                <td class="text-right positive">RD$ 560,000</td>
+                                <td class="text-right">RD$ 370,000</td>
+                                <td class="text-right positive">+RD$ 190,000</td>
+                                <td class="text-right negative"><strong>-RD$ 664,000</strong></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+                <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">*Costos incluyen: nuevo módulo de lechones + alimentación de los 4 módulos</p>
 
                 <h3 style="margin: 30px 0 20px;">FASE 3: Estado Estable (Mes 9+) - Flujo Mensual Positivo</h3>
                 <div class="cards-grid">
                     <div class="card success">
                         <div class="card-title">Venta Mensual</div>
-                        <div class="card-value">RD$ 126,000</div>
-                        <div class="card-detail">9 cerdos × RD$ 14,000</div>
+                        <div class="card-value">RD$ 560,000</div>
+                        <div class="card-detail">40 cerdos × RD$ 14,000</div>
                     </div>
                     <div class="card">
                         <div class="card-title">Costos Mensuales</div>
-                        <div class="card-value">RD$ 48,000</div>
-                        <div class="card-detail">Alimentación + operación</div>
+                        <div class="card-value">RD$ 370,000</div>
+                        <div class="card-detail">Nuevo módulo + alimentación</div>
                     </div>
                     <div class="card highlight">
                         <div class="card-title">Utilidad Mensual</div>
-                        <div class="card-value">RD$ 78,000</div>
-                        <div class="card-detail">Inversionista 50%: RD$ 39,000/mes</div>
+                        <div class="card-value">RD$ 190,000</div>
+                        <div class="card-detail">Inversionista 50%: RD$ 95,000/mes</div>
                     </div>
                     <div class="card success">
                         <div class="card-title">Utilidad Anual</div>
-                        <div class="card-value">RD$ 936,000</div>
-                        <div class="card-detail">ROI: 131% sobre inversión inicial</div>
+                        <div class="card-value">RD$ 2,280,000</div>
+                        <div class="card-detail">ROI: 160% sobre inversión inicial</div>
                     </div>
                 </div>
 
@@ -1597,12 +1727,12 @@
                 </div>
 
                 <div class="info-box warning" style="margin-top: 30px;">
-                    <h4>⚠️ Mensaje Clave</h4>
+                    <h4>⚠️ Mensaje Clave (Escenario 40 cerdos/mes)</h4>
                     <p style="font-size: 1.1rem; line-height: 1.8;">
-                        <strong>Meses 1-4:</strong> Inversión pura (solo gastos) → <strong>-RD$ 356,000</strong><br>
-                        <strong>Mes 5+:</strong> Ventas CADA MES de ~RD$ 126,000<br>
-                        <strong>Mes 9:</strong> Punto de equilibrio alcanzado<br>
-                        <strong>Mes 9+:</strong> Flujo positivo mensual de <strong>+RD$ 78,000</strong>
+                        <strong>Meses 1-4:</strong> Inversión pura (solo gastos) → <strong>-RD$ 1,424,000</strong><br>
+                        <strong>Mes 5+:</strong> Ventas CADA MES de <strong>RD$ 560,000</strong><br>
+                        <strong>Mes 5+:</strong> Utilidad mensual de <strong>+RD$ 190,000</strong><br>
+                        <strong>Año 1:</strong> ROI de <strong>160%</strong> sobre inversión
                     </p>
                 </div>
             </div>
@@ -1615,10 +1745,10 @@
                 <p>La granja actualmente maneja ~250 cerdos. Estos son los escenarios operacionales reales.</p>
             </div>
             <div class="section-content">
-                <div class="info-box warning" style="margin-bottom: 30px;">
-                    <h4>📌 Nota Importante</h4>
-                    <p>Los ejemplos anteriores usan 10 cerdos por módulo como <strong>ejemplo didáctico</strong>.</p>
-                    <p>La operación REAL de la granja maneja entre <strong>160-240 cerdos</strong> en rotación para ventas mensuales.</p>
+                <div class="info-box success" style="margin-bottom: 30px;">
+                    <h4>📌 Dos Escenarios Reales</h4>
+                    <p>Todos los cálculos anteriores usan <strong>40 cerdos por módulo</strong> (160 en rotación).</p>
+                    <p>A continuación, comparamos ambos escenarios: <strong>40 cerdos/mes</strong> vs <strong>60 cerdos/mes</strong>.</p>
                 </div>
 
                 <h3 style="margin-bottom: 20px;">Base de Cálculo</h3>
