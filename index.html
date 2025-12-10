@@ -627,6 +627,194 @@
         section {
             animation: fadeInUp 0.6s ease-out;
         }
+
+        /* EVOLUCIÓN DEL MODELO STYLES */
+        .evolution-block {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            background: white;
+            border-left: 4px solid var(--primary);
+        }
+
+        .evolution-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .evolution-content {
+            flex: 1;
+        }
+
+        .evolution-content h3 {
+            margin: 0 0 0.75rem 0;
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+        }
+
+        .evolution-content p {
+            margin: 0 0 1rem 0;
+            line-height: 1.6;
+        }
+
+        .evolution-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .evolution-status.resolved {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .evolution-status.pending {
+            background: #fff3e0;
+            color: #ef6c00;
+        }
+
+        .context-block {
+            border-left-color: #ff9800;
+            background: linear-gradient(135deg, #fff8e1 0%, white 100%);
+        }
+
+        .improvements-block {
+            border-left-color: #4caf50;
+            background: linear-gradient(135deg, #e8f5e9 0%, white 100%);
+        }
+
+        .bottleneck-block {
+            border-left-color: #f44336;
+            background: linear-gradient(135deg, #ffebee 0%, white 100%);
+        }
+
+        .demeter-block {
+            border-left-color: #2196f3;
+            background: linear-gradient(135deg, #e3f2fd 0%, white 100%);
+        }
+
+        .solution-block {
+            border-left-color: #9c27b0;
+            background: linear-gradient(135deg, #f3e5f5 0%, white 100%);
+        }
+
+        .improvements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .improvement-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            background: rgba(76, 175, 80, 0.1);
+            border-radius: 6px;
+        }
+
+        .improvement-item .check {
+            font-size: 1.1rem;
+        }
+
+        .bottleneck-impact {
+            background: #ffebee;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .impact-label {
+            font-weight: 600;
+            color: #c62828;
+        }
+
+        .demeter-solution {
+            background: #e3f2fd;
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+        }
+
+        .demeter-solution h4 {
+            margin: 0 0 0.75rem 0;
+            color: #1565c0;
+        }
+
+        .demeter-solution ul {
+            margin: 0 0 1rem 1.25rem;
+            padding: 0;
+        }
+
+        .demeter-solution li {
+            margin-bottom: 0.4rem;
+        }
+
+        .demeter-promise {
+            margin: 0 !important;
+            font-size: 0.95rem;
+            color: #1565c0;
+        }
+
+        .design-features {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .design-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: rgba(156, 39, 176, 0.08);
+            border-radius: 8px;
+        }
+
+        .feature-icon {
+            font-size: 1.2rem;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .evolution-conclusion {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .evolution-conclusion p {
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .evolution-conclusion p:first-child {
+            font-size: 1.3rem;
+        }
+
+        @media (max-width: 768px) {
+            .evolution-block {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .evolution-icon {
+                font-size: 1.5rem;
+            }
+            .improvements-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -645,6 +833,7 @@
             <li><a href="#capital">Estructura de Capital</a></li>
             <li><a href="#timeline">Línea de Tiempo</a></li>
             <li><a href="#escala-real">Escala Real</a></li>
+            <li><a href="#evolucion">📈 Evolución</a></li>
             <li><a href="#escenarios">Escenarios</a></li>
             <li><a href="#garantias">Garantías</a></li>
             <li><a href="#diferenciador">🧠 Diferenciador IA</a></li>
@@ -2089,6 +2278,140 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- EVOLUCIÓN DEL MODELO -->
+        <section id="evolucion">
+            <div class="section-header">
+                <h2>📈 Evolución del Modelo: De Pruebas a Escala</h2>
+                <p>Transparencia total: problemas identificados, soluciones implementadas, y diseño optimizado</p>
+            </div>
+            <div class="section-content">
+
+                <!-- CONTEXTO: Factor Externo -->
+                <div class="evolution-block context-block">
+                    <div class="evolution-icon">🌡️</div>
+                    <div class="evolution-content">
+                        <h3>Contexto: Calor Récord 2024-2025</h3>
+                        <p>República Dominicana registró temperaturas históricas este año. <strong>Los cerdos no querían comer</strong> - factor externo documentado que extendió los ciclos más allá de lo normal.</p>
+                        <div class="evolution-status resolved">
+                            <span>✅ MITIGADO:</span> Ventilación instalada + nuevo diseño con malla ciclónica y pintura aislante
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MEJORAS YA IMPLEMENTADAS -->
+                <div class="evolution-block improvements-block">
+                    <div class="evolution-icon">🔧</div>
+                    <div class="evolution-content">
+                        <h3>Lo Que Ya Invertimos (Con Recursos Propios)</h3>
+                        <p>No esperamos a tener inversor para actuar. Ya implementamos:</p>
+                        <div class="improvements-grid">
+                            <div class="improvement-item">
+                                <span class="check">✅</span>
+                                <span>Sistema de agua filtrada (7 tinacos)</span>
+                            </div>
+                            <div class="improvement-item">
+                                <span class="check">✅</span>
+                                <span>Electricidad estable</span>
+                            </div>
+                            <div class="improvement-item">
+                                <span class="check">✅</span>
+                                <span>Ventilación mejorada</span>
+                            </div>
+                            <div class="improvement-item">
+                                <span class="check">✅</span>
+                                <span>Protocolo veterinario establecido</span>
+                            </div>
+                            <div class="improvement-item">
+                                <span class="check">✅</span>
+                                <span>Proveedor fijo de alimento</span>
+                            </div>
+                            <div class="improvement-item">
+                                <span class="check">✅</span>
+                                <span>Habilitación de espacios</span>
+                            </div>
+                            <div class="improvement-item">
+                                <span class="check">✅</span>
+                                <span>Plomería actualizada (½" → 1½")</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CUELLO DE BOTELLA CENTRAL -->
+                <div class="evolution-block bottleneck-block">
+                    <div class="evolution-icon">🔴</div>
+                    <div class="evolution-content">
+                        <h3>El Problema Estructural Central</h3>
+                        <p>La planta original era de <strong>MADRES</strong>, no de engorde. Los cerdos se mueven hasta <strong>3 VECES</strong> durante el ciclo a habitaciones más grandes conforme crecen.</p>
+                        <div class="bottleneck-impact">
+                            <span class="impact-label">Impacto:</span>
+                            <span>Cada movimiento = estrés = semanas de atraso en crecimiento</span>
+                        </div>
+                        <div class="evolution-status pending">
+                            <span>🎯 SOLUCIÓN:</span> Galpón dedicado de engorde con 4 módulos (RD$ 600K) → <strong>CERO rotación</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COMUNICACIÓN Y DEMETER -->
+                <div class="evolution-block demeter-block">
+                    <div class="evolution-icon">📊</div>
+                    <div class="evolution-content">
+                        <h3>Transparencia: De Problema a Fortaleza</h3>
+                        <p>La comunicación ha sido irregular - constantemente resolviendo problemas sin tiempo para reportar. <strong>No es excusa, es realidad.</strong></p>
+                        <div class="demeter-solution">
+                            <h4>Por eso desarrollamos DEMETER:</h4>
+                            <ul>
+                                <li>Sistema de tracking digital con IA</li>
+                                <li>Reportes automáticos semanales</li>
+                                <li>Dashboard 24/7 para el inversor</li>
+                                <li>Alertas de problemas en tiempo real</li>
+                            </ul>
+                            <p class="demeter-promise"><em>No prometo "voy a comunicar mejor". Prometo un <strong>SISTEMA</strong> que comunica por mí.</em></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DISEÑO NUEVO GALPÓN -->
+                <div class="evolution-block solution-block">
+                    <div class="evolution-icon">🏗️</div>
+                    <div class="evolution-content">
+                        <h3>Diseño del Nuevo Galpón: Prevención, No Corrección</h3>
+                        <p>El nuevo galpón no solo resuelve - <strong>PREVIENE</strong>:</p>
+                        <div class="design-features">
+                            <div class="design-feature">
+                                <span class="feature-icon">🏗️</span>
+                                <span class="feature-text">Malla ciclónica como cerca (ventilación natural + bajo costo)</span>
+                            </div>
+                            <div class="design-feature">
+                                <span class="feature-icon">🌡️</span>
+                                <span class="feature-text">Zinc con pintura aislante desde el inicio</span>
+                            </div>
+                            <div class="design-feature">
+                                <span class="feature-icon">📦</span>
+                                <span class="feature-text">4 módulos separados = CERO rotación de animales</span>
+                            </div>
+                            <div class="design-feature">
+                                <span class="feature-icon">🐷</span>
+                                <span class="feature-text">Cerdos entran de 8kg y salen de 100kg <strong>SIN MOVERSE</strong></span>
+                            </div>
+                            <div class="design-feature">
+                                <span class="feature-icon">⏱️</span>
+                                <span class="feature-text">Punto de distribución reubicado: 2 min → 36 segundos por cubeta</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MENSAJE FINAL -->
+                <div class="evolution-conclusion">
+                    <p><strong>No pedimos dinero para arreglar errores.</strong></p>
+                    <p>Pedimos dinero para <strong>ESCALAR</strong> lo que ya funciona y eliminar el único cuello de botella que queda.</p>
+                </div>
+
             </div>
         </section>
 
