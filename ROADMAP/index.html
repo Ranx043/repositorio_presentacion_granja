@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROADMAP BIOENRICH - Integracion Vertical Completa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #0d1f3c 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px;
+            color: #a8dadc;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .back-button:hover {
+            background: rgba(0,217,255,0.2);
+            color: #00d9ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 50px 40px;
+            background: linear-gradient(145deg, rgba(139, 92, 246, 0.15), rgba(16, 185, 129, 0.1));
+            border-radius: 30px;
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #8b5cf6, #10b981, #f59e0b, #ef4444);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #8b5cf6, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #a8dadc;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .vision-badge {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(145deg, #8b5cf6, #6d28d9);
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        /* Formula Section */
+        .formula-section {
+            background: linear-gradient(145deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1));
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 2px solid rgba(16, 185, 129, 0.3);
+            text-align: center;
+        }
+
+        .formula-title {
+            color: #10b981;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+        }
+
+        .formula-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .formula-item {
+            padding: 20px 30px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            border: 2px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .formula-item .icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .formula-item .label {
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .formula-arrow {
+            font-size: 2rem;
+            color: #10b981;
+        }
+
+        .formula-result {
+            font-size: 1.3rem;
+            color: #f59e0b;
+            font-weight: bold;
+            padding: 15px 30px;
+            background: rgba(245, 158, 11, 0.15);
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        /* Timeline/Roadmap */
+        .roadmap-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #8b5cf6;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .phase-timeline {
+            position: relative;
+        }
+
+        .phase-timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #10b981, #3b82f6, #8b5cf6, #f59e0b, #ef4444, #ec4899);
+            border-radius: 2px;
+        }
+
+        .phase-card {
+            position: relative;
+            margin-left: 70px;
+            margin-bottom: 30px;
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            border: 2px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+
+        .phase-card:hover {
+            transform: translateX(10px);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .phase-card.current {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .phase-card.current::after {
+            content: 'ESTAMOS AQUI';
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: linear-gradient(145deg, #10b981, #059669);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .phase-number {
+            position: absolute;
+            left: -55px;
+            top: 25px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .phase-0 .phase-number { background: linear-gradient(145deg, #6b7280, #4b5563); }
+        .phase-1 .phase-number { background: linear-gradient(145deg, #10b981, #059669); }
+        .phase-2 .phase-number { background: linear-gradient(145deg, #3b82f6, #2563eb); }
+        .phase-3 .phase-number { background: linear-gradient(145deg, #8b5cf6, #7c3aed); }
+        .phase-4 .phase-number { background: linear-gradient(145deg, #f59e0b, #d97706); }
+        .phase-5 .phase-number { background: linear-gradient(145deg, #ef4444, #dc2626); }
+
+        .phase-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .phase-title {
+            font-size: 1.3rem;
+            color: #fff;
+        }
+
+        .phase-status {
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .status-current { background: #10b981; }
+        .status-next { background: #3b82f6; }
+        .status-future { background: rgba(255,255,255,0.2); }
+
+        .phase-description {
+            color: #a8dadc;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .phase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .phase-item {
+            padding: 15px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            border-left: 3px solid;
+        }
+
+        .phase-0 .phase-item { border-color: #6b7280; }
+        .phase-1 .phase-item { border-color: #10b981; }
+        .phase-2 .phase-item { border-color: #3b82f6; }
+        .phase-3 .phase-item { border-color: #8b5cf6; }
+        .phase-4 .phase-item { border-color: #f59e0b; }
+        .phase-5 .phase-item { border-color: #ef4444; }
+
+        .phase-item h4 {
+            color: #fff;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .phase-item p {
+            color: #778da9;
+            font-size: 0.85rem;
+        }
+
+        .transparency-box {
+            padding: 20px;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .transparency-box h4 {
+            color: #3b82f6;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .transparency-box p {
+            color: #a8dadc;
+            font-size: 0.9rem;
+        }
+
+        /* Ecosystem Diagram */
+        .ecosystem-section {
+            background: rgba(0,0,0,0.3);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .ecosystem-diagram {
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: #a8dadc;
+            white-space: pre-wrap;
+            text-align: center;
+        }
+
+        .ecosystem-diagram .highlight-red { color: #ef4444; }
+        .ecosystem-diagram .highlight-orange { color: #f59e0b; }
+        .ecosystem-diagram .highlight-blue { color: #3b82f6; }
+        .ecosystem-diagram .highlight-purple { color: #8b5cf6; }
+        .ecosystem-diagram .highlight-green { color: #10b981; }
+
+        /* Investment Section */
+        .investment-section {
+            background: linear-gradient(145deg, rgba(245, 158, 11, 0.1), rgba(16, 185, 129, 0.1));
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 2px solid rgba(245, 158, 11, 0.3);
+        }
+
+        .investment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .investment-card {
+            padding: 25px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .investment-card.highlight {
+            border: 2px solid #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .investment-card h3 {
+            color: #f59e0b;
+            margin-bottom: 10px;
+        }
+
+        .investment-card .amount {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #10b981;
+            margin-bottom: 10px;
+        }
+
+        .investment-card p {
+            color: #a8dadc;
+            font-size: 0.9rem;
+        }
+
+        /* Tools Section */
+        .tools-section {
+            margin-bottom: 40px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .tool-card {
+            padding: 25px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            border: 2px solid rgba(255,255,255,0.1);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .tool-card:hover {
+            border-color: #10b981;
+            transform: translateY(-5px);
+        }
+
+        .tool-card .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .tool-card h3 {
+            color: #10b981;
+            margin-bottom: 10px;
+        }
+
+        .tool-card p {
+            color: #a8dadc;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .tool-card .phases {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .tool-card .phase-tag {
+            padding: 3px 10px;
+            background: rgba(16, 185, 129, 0.2);
+            border-radius: 10px;
+            font-size: 0.75rem;
+            color: #10b981;
+        }
+
+        /* QR Vision */
+        .qr-vision {
+            background: linear-gradient(145deg, rgba(236, 72, 153, 0.1), rgba(139, 92, 246, 0.1));
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 2px solid rgba(236, 72, 153, 0.3);
+            text-align: center;
+        }
+
+        .qr-vision h2 {
+            color: #ec4899;
+            margin-bottom: 20px;
+        }
+
+        .qr-example {
+            display: inline-block;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            margin: 20px 0;
+        }
+
+        .qr-placeholder {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #000 25%, transparent 25%),
+                        linear-gradient(-45deg, #000 25%, transparent 25%),
+                        linear-gradient(45deg, transparent 75%, #000 75%),
+                        linear-gradient(-45deg, transparent 75%, #000 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            border-radius: 10px;
+        }
+
+        .qr-info {
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 25px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            border-left: 4px solid #ec4899;
+        }
+
+        .qr-info h4 {
+            color: #ec4899;
+            margin-bottom: 15px;
+        }
+
+        .qr-info ul {
+            list-style: none;
+        }
+
+        .qr-info li {
+            padding: 8px 0;
+            color: #a8dadc;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .qr-info li span:first-child {
+            color: #778da9;
+        }
+
+        .qr-info li span:last-child {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 50px 40px;
+            background: linear-gradient(145deg, rgba(16,185,129,0.2), rgba(139,92,246,0.1));
+            border-radius: 25px;
+            border: 2px solid rgba(16,185,129,0.4);
+        }
+
+        .cta-section h2 {
+            color: #10b981;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            color: #a8dadc;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .cta-quote {
+            font-style: italic;
+            color: #f59e0b;
+            font-size: 1.2rem;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(145deg, #10b981, #059669);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(16,185,129,0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(16,185,129,0.4);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+            color: #778da9;
+        }
+
+        .demeter-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(145deg, #2a9d8f, #1d6f64);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .formula-flow {
+                flex-direction: column;
+            }
+
+            .formula-arrow {
+                transform: rotate(90deg);
+            }
+
+            .phase-timeline::before {
+                left: 15px;
+            }
+
+            .phase-card {
+                margin-left: 45px;
+            }
+
+            .phase-number {
+                left: -38px;
+                width: 30px;
+                height: 30px;
+                font-size: 1rem;
+            }
+
+            .ecosystem-diagram {
+                font-size: 0.7rem;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back-button">
+            <span>&larr;</span> Volver al Menu
+        </a>
+
+        <!-- Hero -->
+        <div class="hero">
+            <div class="vision-badge">VISION 2025-2030</div>
+            <h1>ROADMAP BIOENRICH</h1>
+            <p>Integracion Vertical Completa: Del nacimiento del animal al plato del cliente. 6 fases para construir un imperio agroindustrial transparente.</p>
+        </div>
+
+        <!-- Formula Central -->
+        <div class="formula-section">
+            <h2 class="formula-title">LA FORMULA: Transparencia como Producto</h2>
+            <div class="formula-flow">
+                <div class="formula-item">
+                    <div class="icon">📊</div>
+                    <div class="label">DATOS</div>
+                </div>
+                <span class="formula-arrow">→</span>
+                <div class="formula-item">
+                    <div class="icon">👁️</div>
+                    <div class="label">VISIBILIDAD</div>
+                </div>
+                <span class="formula-arrow">→</span>
+                <div class="formula-item">
+                    <div class="icon">🤝</div>
+                    <div class="label">CONFIANZA</div>
+                </div>
+                <span class="formula-arrow">→</span>
+                <div class="formula-item">
+                    <div class="icon">💰</div>
+                    <div class="label">DINERO</div>
+                </div>
+            </div>
+            <div class="formula-result">"No prometo. DEMUESTRO. No explico. DOCUMENTO. No convenzo. MUESTRO."</div>
+        </div>
+
+        <!-- Roadmap Timeline -->
+        <div class="roadmap-section">
+            <h2 class="section-title">🗺️ LAS 6 FASES DE INTEGRACION</h2>
+
+            <div class="phase-timeline">
+                <!-- Fase 0 -->
+                <div class="phase-card phase-0">
+                    <div class="phase-number">0</div>
+                    <div class="phase-header">
+                        <h3 class="phase-title">FASE 0: Situacion Actual</h3>
+                        <span class="phase-status status-future">COMPLETANDO</span>
+                    </div>
+                    <p class="phase-description">Compramos lechones de proveedores externos. Dependencia total del mercado para iniciar cada ciclo de engorde.</p>
+                    <div class="phase-grid">
+                        <div class="phase-item">
+                            <h4>Dependencia</h4>
+                            <p>Lechones externos a RD$9,250/u</p>
+                        </div>
+                        <div class="phase-item">
+                            <h4>ROI Actual</h4>
+                            <p>~51% con lechon comprado</p>
+                        </div>
+                        <div class="phase-item">
+                            <h4>Riesgo</h4>
+                            <p>Precio y disponibilidad variable</p>
+                        </div>
+                    </div>
+                    <div class="transparency-box">
+                        <h4>🔍 Transparencia en Fase 0</h4>
+                        <p>DEMETER documenta cada cerdo comprado, cada gasto, cada venta. La inversora ve exactamente donde va su dinero desde el dia 1.</p>
+                    </div>
+                </div>
+
+                <!-- Fase 1 -->
+                <div class="phase-card phase-1 current">
+                    <div class="phase-number">1</div>
+                    <div class="phase-header">
+                        <h3 class="phase-title">FASE 1: Produccion Propia + Compost</h3>
+                        <span class="phase-status status-current">INVERSION ACTUAL</span>
+                    </div>
+                    <p class="phase-description">Agregar cerdas reproductoras para producir lechones propios. Comercializar el compost acumulado. Eliminar dependencia externa.</p>
+                    <div class="phase-grid">
+                        <div class="phase-item">
+                            <h4>30 Madres</h4>
+                            <p>Sistema 5x6 para produccion constante</p>
+                        </div>
+                        <div class="phase-item">
+                            <h4>60-72 Lechones/mes</h4>
+                            <p>100% produccion propia</p>
+                        </div>
+                        <div class="phase-item">
+                            <h4>Venta de Compost</h4>
+                            <p>1,000 sacos stock = RD$300K</p>
+                        </div>
+                        <div class="phase-item">
+                            <h4>ROI Fase 1</h4>
+                            <p>~115% con lechon propio</p>
+                        </div>
+                    </div>
+                    <div class="transparency-box">
+                        <h4>🔍 Transparencia en Fase 1</h4>
+                        <p>Cada cerda con historial de crias. Cada lechon con ID vinculado a padres. Compost con proceso documentado. El cliente de compost puede ver su origen.</p>
+                    </div>
+                </div>
+
+                <!-- Fase 2 -->
+                <div class="phase-card phase-2">
+                    <div class="phase-number">2</div>
+                    <div class="phase-header">
+                        <h3 class="phase-title">FASE 2: Fabrica de Alimentos</h3>
+                        <span class="phase-status status-next">PROXIMA</span>
+                    </div>
+                    <p class="phase-description">Produccion interna de alimento balanceado. Control total de calidad e ingredientes. Reduccion de costos operativos en 30-40%.</p>
+                    <div class="phase-grid">
+                        <div class="phase-item">
+                            <h4>Mezcla Propia</h4>
+                            <p>Formulas optimizadas para cada etapa</p>
+                        </div>
+                        <div class="phase-item">
+                            <h4>Control de Calidad</h4>
+                            <p>Ingredientes verificados</p>
+                        </div>
+                        <div class="phase-item">
+                            <h4>Ahorro</h4>
+                            <p>30-40% menos costo por kg</p>
+                        </div>
+                    </div>
+                    <div class="transparency-box">
+                        <h4>🔍 Transparencia en Fase 2</h4>
+                        <p>Cada ingrediente documentado (origen, precio, calidad). Formulas de mezcla visibles. Costo por kg de alimento vs comprar afuera claramente comparado.</p>
+                    </div>
+                </div>
+
+                <!-- Fase 3 -->
+                <div class="phase-card phase-3">
+                    <div class="phase-number">3</div>
+                    <div class="phase-header">
+                        <h3 class="phase-title">FASE 3: Automatizacion</h3>
+                        <span class="phase-status status-future">FUTURO</span>
+                    </div>
+                    <p class="phase-description">Automatizar procesos con sensores IoT, camaras inteligentes y FARMVISION. Molino propio para paja de arroz. Reduccion de mano de obra.</p>
+                    <div class="phase-grid">
+                        <div class="phase-item">
+                            <h4>FARMVISION</h4>
+                            <p>Pesaje automatico por camara</p>
+                        </div>
+                        <div class="phase-item">
+                            <h4>Sensores IoT</h4>
+                            <p>Temperatura, agua, ambiente</p>
+                        </div>
+                        <div class="phase-item">
+                            <h4>Molino Propio</h4>
+                            <p>Paja de arroz procesada</p>
+                        </div>
+                        <div class="phase-item">
+                            <h4>Alertas</h4>
+                            <p>Deteccion temprana de problemas</p>
+                        </div>
+                    </div>
+                    <div class="transparency-box">
+                        <h4>🔍 Transparencia en Fase 3</h4>
+                        <p>Dashboard en tiempo real 24/7. Datos automaticos sin esfuerzo humano. Cualquier anomalia detectada al instante. Inversores ven operacion en vivo.</p>
+                    </div>
+                </div>
+
+                <!-- Fase 4 -->
+                <div class="phase-card phase-4">
+                    <div class="phase-number">4</div>
+                    <div class="phase-header">
+                        <h3 class="phase-title">FASE 4: Diversificacion</h3>
+                        <span class="phase-status status-future">FUTURO</span>
+                    </div>
+                    <p class="phase-description">Expandir a otras especies: granjas de gallinas (huevos + carne) y granjas de peces (acuicultura). Multiples lineas de producto.</p>
+                    <div class="phase-grid">
+                        <div class="phase-item">
+                            <h4>Gallinas</h4>
+                            <p>Huevos + carne de pollo</p>
+                        </div>
+                        <div class="phase-item">
+                            <h4>Peces</h4>
+                            <p>Tilapia u otra especie local</p>
+                        </div>
+                        <div class="phase-item">
+                            <h4>Sinergias</h4>
+                            <p>Mismo sistema de gestion</p>
+                        </div>
+                        <div class="phase-item">
+                            <h4>Riesgo</h4>
+                            <p>Diversificado entre especies</p>
+                        </div>
+                    </div>
+                    <div class="transparency-box">
+                        <h4>🔍 Transparencia en Fase 4</h4>
+                        <p>Un solo dashboard para cerdos, gallinas y peces. Finanzas consolidadas. Misma filosofia de documentacion total para cada linea de producto.</p>
+                    </div>
+                </div>
+
+                <!-- Fase 5 -->
+                <div class="phase-card phase-5">
+                    <div class="phase-number">5</div>
+                    <div class="phase-header">
+                        <h3 class="phase-title">FASE 5: Cadena de Carnicerias</h3>
+                        <span class="phase-status status-future">VISION FINAL</span>
+                    </div>
+                    <p class="phase-description">Venta directa al consumidor. Carne de cerdo, pollo, chivo, huevos - todo producido internamente. Control total de la cadena de valor.</p>
+                    <div class="phase-grid">
+                        <div class="phase-item">
+                            <h4>Venta Directa</h4>
+                            <p>Sin intermediarios = maximo margen</p>
+                        </div>
+                        <div class="phase-item">
+                            <h4>Productos</h4>
+                            <p>Cerdo, pollo, pescado, huevos</p>
+                        </div>
+                        <div class="phase-item">
+                            <h4>QR Trazabilidad</h4>
+                            <p>Cliente ve historia completa</p>
+                        </div>
+                        <div class="phase-item">
+                            <h4>Precio Premium</h4>
+                            <p>20-50% mas por transparencia</p>
+                        </div>
+                    </div>
+                    <div class="transparency-box">
+                        <h4>🔍 Transparencia en Fase 5</h4>
+                        <p>QR code en cada producto. Cliente escanea y ve: donde nacio, que comio, vacunas, fecha de sacrificio. NADIE mas puede ofrecer esto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ecosystem Diagram -->
+        <div class="ecosystem-section">
+            <h2 class="section-title">🏗️ ECOSISTEMA COMPLETO</h2>
+            <div class="ecosystem-diagram">
+                        <span class="highlight-red">🏪 CARNICERIAS (Fase 5)</span>
+                               ↑
+          ┌────────────────────┼────────────────────┐
+          ↑                    ↑                    ↑
+     <span class="highlight-green">🐷 Cerdo</span>             <span class="highlight-orange">🐔 Pollo</span>            <span class="highlight-blue">🐟 Pescado</span>
+     (Fase 0-1)            (Fase 4)            (Fase 4)
+          ↑                    ↑                    ↑
+          └────────────────────┼────────────────────┘
+                               ↑
+                    <span class="highlight-blue">🌾 ALIMENTO (Fase 2)</span>
+                               ↑
+                    <span class="highlight-purple">⚙️ AUTOMATIZACION (Fase 3)</span>
+                               ↑
+                    <span class="highlight-green">🧠 DEMETER (Transversal)</span>
+            </div>
+        </div>
+
+        <!-- Investment Section -->
+        <div class="investment-section">
+            <h2 class="section-title">💰 INVERSION FASE 1</h2>
+            <p style="text-align: center; color: #a8dadc; margin-bottom: 30px;">Solo se requiere inversion ahora para Fase 1. Las siguientes fases se financian con utilidades.</p>
+            <div class="investment-grid">
+                <div class="investment-card highlight">
+                    <h3>FASE 1</h3>
+                    <div class="amount">RD$500K-800K</div>
+                    <p>Cerdas reproductoras + infraestructura inicial. <strong>INVERSION ACTUAL</strong></p>
+                </div>
+                <div class="investment-card">
+                    <h3>FASE 2</h3>
+                    <div class="amount" style="color: #3b82f6;">Utilidades F1</div>
+                    <p>Se financia con ganancias de Fase 1</p>
+                </div>
+                <div class="investment-card">
+                    <h3>FASE 3-5</h3>
+                    <div class="amount" style="color: #8b5cf6;">Reinversion</div>
+                    <p>Crecimiento organico + posibles socios</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tools Section -->
+        <div class="tools-section">
+            <h2 class="section-title">🛠️ HERRAMIENTAS DE TRANSPARENCIA</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="icon">🌾</div>
+                    <h3>DEMETER</h3>
+                    <p>Consciencia de la granja. Documenta cada dato, genera reportes, hace visible lo invisible.</p>
+                    <div class="phases">
+                        <span class="phase-tag">Fase 0</span>
+                        <span class="phase-tag">Fase 1</span>
+                        <span class="phase-tag">Fase 2</span>
+                        <span class="phase-tag">Fase 3</span>
+                        <span class="phase-tag">Fase 4</span>
+                        <span class="phase-tag">Fase 5</span>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">📷</div>
+                    <h3>FARMVISION</h3>
+                    <p>Pesaje inteligente por camara. Evidencia fotografica de cada peso. 98% precision.</p>
+                    <div class="phases">
+                        <span class="phase-tag">Fase 1</span>
+                        <span class="phase-tag">Fase 3</span>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">🧮</div>
+                    <h3>CALCULADORA</h3>
+                    <p>Proyecciones financieras en tiempo real. ROI, costos, punto de equilibrio.</p>
+                    <div class="phases">
+                        <span class="phase-tag">Fase 0</span>
+                        <span class="phase-tag">Fase 1</span>
+                        <span class="phase-tag">Fase 2</span>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">📱</div>
+                    <h3>QR TRAZABILIDAD</h3>
+                    <p>Codigo QR en cada producto. Historia completa del animal al alcance del cliente.</p>
+                    <div class="phases">
+                        <span class="phase-tag">Fase 5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QR Vision -->
+        <div class="qr-vision">
+            <h2>🎯 LA META FINAL: QR Code en Cada Producto</h2>
+            <p style="color: #a8dadc; margin-bottom: 20px;">En Fase 5, el cliente escanea el QR y ve toda la historia del producto</p>
+
+            <div class="qr-example">
+                <div class="qr-placeholder"></div>
+            </div>
+
+            <div class="qr-info">
+                <h4>📋 Informacion del Producto</h4>
+                <ul>
+                    <li><span>Granja:</span> <span>BIOENRICH CERDOS</span></li>
+                    <li><span>Animal:</span> <span>Cerdo #127</span></li>
+                    <li><span>Nacido:</span> <span>15 Marzo 2026</span></li>
+                    <li><span>Padres:</span> <span>Cerda #12 x Verraco #3</span></li>
+                    <li><span>Alimentacion:</span> <span>100% Formula propia</span></li>
+                    <li><span>Peso final:</span> <span>98 kg</span></li>
+                    <li><span>Dias de vida:</span> <span>180</span></li>
+                    <li><span>Certificaciones:</span> <span>Libre antibioticos</span></li>
+                </ul>
+            </div>
+
+            <p style="color: #ec4899; margin-top: 25px; font-weight: bold;">Ninguna carniceria competidora puede ofrecer esto.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2>🚀 Comenzamos con Fase 1</h2>
+            <p>La transparencia no es un costo. Es el producto mas valioso que puedes vender.</p>
+            <div class="cta-quote">"Desde que vean que deja dinero, aunque sean malos lo querran. Y luego ya no podran ser malos porque no les es rentable."</div>
+            <a href="../" class="cta-button">Volver al Menu Principal</a>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>ROADMAP BIOENRICH</strong> - Vision 2025-2030</p>
+        <p>Integracion Vertical Completa: Del nacimiento al plato</p>
+        <div class="demeter-badge">🌾 Documentado por DEMETER - Granja BIOENRICH</div>
+    </footer>
+</body>
+</html>
